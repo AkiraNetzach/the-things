@@ -1,4 +1,4 @@
-# File Organizer – Automatic Folder Organizer
+# Automatic Folder Organizer
 
 Tired of messy files? This Python script organizes your files automatically!  
 It sorts images, documents, videos, and music into separate folders so you don’t have to do it manually.
