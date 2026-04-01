@@ -1,0 +1,23 @@
+import os
+import shutil
+
+pasta = "C:/Users/SEU_USUARIO/Downloads"  # ajuste aqui
+
+tipos = {
+    "Imagens": [".png", ".jpg", ".jpeg", ".gif"],
+    "Documentos": [".pdf", ".docx", ".txt"],
+    "Videos": [".mp4", ".mkv"],
+    "Musica": [".mp3", ".wav"]
+}
+
+for arquivo in os.listdir(pasta):
+    caminho_arquivo = os.path.join(pasta, arquivo)
+    if os.path.isfile(caminho_arquivo):
+        for pasta_destino, extensoes in tipos.items():
+            if any(arquivo.lower().endswith(ext) for ext in extensoes):
+                destino = os.path.join(pasta, pasta_destino)
+                os.makedirs(destino, exist_ok=True)
+                shutil.move(caminho_arquivo, os.path.join(destino, arquivo))
+                break
+
+print("Arquivos organizados!")
