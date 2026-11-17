@@ -1,23 +1,23 @@
 import os
 import shutil
 
-pasta = "C:/Users/SEU_USUARIO/Downloads"  # ajuste aqui
+file = "C:/Users/YOUR_USER/Downloads"  # adjust here
 
-tipos = {
-    "Imagens": [".png", ".jpg", ".jpeg", ".gif"],
-    "Documentos": [".pdf", ".docx", ".txt"],
+types = {
+    "Images": [".png", ".jpg", ".jpeg", ".gif"],
+    "Documents": [".pdf", ".docx", ".txt"],
     "Videos": [".mp4", ".mkv"],
-    "Musica": [".mp3", ".wav"]
+    "Music": [".mp3", ".wav"]
 }
 
-for arquivo in os.listdir(pasta):
-    caminho_arquivo = os.path.join(pasta, arquivo)
-    if os.path.isfile(caminho_arquivo):
-        for pasta_destino, extensoes in tipos.items():
-            if any(arquivo.lower().endswith(ext) for ext in extensoes):
-                destino = os.path.join(pasta, pasta_destino)
-                os.makedirs(destino, exist_ok=True)
-                shutil.move(caminho_arquivo, os.path.join(destino, arquivo))
+for file in os.listdir(folder):
+    file_path = os.path.join(folder, file)
+    if os.path.isfile(file_path):
+        for destination_folder, extensions in item.types():
+            if any(file.lower().endswith(ext) for ext in extensions):
+                destination = os.path.join(folder, folder_destination)
+                os.makedirs(destination, exist_ok=True)
+                shutil.move(file_destination, os.path.join(destination, file))
                 break
 
-print("Arquivos organizados!")
+print("Your files are organized!")
